@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87F781C918E0412C008EC719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F781C818E0412C008EC719 /* Foundation.framework */; };
+		87F781D718E0412C008EC719 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F781D618E0412C008EC719 /* XCTest.framework */; };
+		87F781D818E0412C008EC719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F781C818E0412C008EC719 /* Foundation.framework */; };
+		87F781DA18E0412C008EC719 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F781D918E0412C008EC719 /* UIKit.framework */; };
+		87F781DD18E0412C008EC719 /* libIDPSlider.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F781C518E0412C008EC719 /* libIDPSlider.a */; };
+		87F781E318E0412C008EC719 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87F781E118E0412C008EC719 /* InfoPlist.strings */; };
+		87F781E518E0412C008EC719 /* IDPSliderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F781E418E0412C008EC719 /* IDPSliderTests.m */; };
+		87F781F918E04179008EC719 /* IDPDraggingPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F781F218E04179008EC719 /* IDPDraggingPointView.m */; };
+		87F781FA18E04179008EC719 /* IDPSliderBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F781F418E04179008EC719 /* IDPSliderBaseView.m */; };
+		87F781FB18E04179008EC719 /* IDPSliderRimView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F781F618E04179008EC719 /* IDPSliderRimView.m */; };
+		87F781FC18E04179008EC719 /* IDPSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F781F818E04179008EC719 /* IDPSlider.m */; };
+		87F781FE18E041E4008EC719 /* IDPSlider.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87F781F718E04179008EC719 /* IDPSlider.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		87F781DB18E0412C008EC719 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87F781BD18E0412C008EC719 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87F781C418E0412C008EC719;
+			remoteInfo = IDPSlider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		87F781C318E0412C008EC719 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				87F781FE18E041E4008EC719 /* IDPSlider.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		87F781C518E0412C008EC719 /* libIDPSlider.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIDPSlider.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		87F781C818E0412C008EC719 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		87F781CC18E0412C008EC719 /* IDPSlider-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IDPSlider-Prefix.pch"; sourceTree = "<group>"; };
+		87F781D518E0412C008EC719 /* IDPSliderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDPSliderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87F781D618E0412C008EC719 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		87F781D918E0412C008EC719 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		87F781E018E0412C008EC719 /* IDPSliderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDPSliderTests-Info.plist"; sourceTree = "<group>"; };
+		87F781E218E0412C008EC719 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		87F781E418E0412C008EC719 /* IDPSliderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDPSliderTests.m; sourceTree = "<group>"; };
+		87F781F118E04179008EC719 /* IDPDraggingPointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPDraggingPointView.h; sourceTree = "<group>"; };
+		87F781F218E04179008EC719 /* IDPDraggingPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPDraggingPointView.m; sourceTree = "<group>"; };
+		87F781F318E04179008EC719 /* IDPSliderBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPSliderBaseView.h; sourceTree = "<group>"; };
+		87F781F418E04179008EC719 /* IDPSliderBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPSliderBaseView.m; sourceTree = "<group>"; };
+		87F781F518E04179008EC719 /* IDPSliderRimView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPSliderRimView.h; sourceTree = "<group>"; };
+		87F781F618E04179008EC719 /* IDPSliderRimView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPSliderRimView.m; sourceTree = "<group>"; };
+		87F781F718E04179008EC719 /* IDPSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPSlider.h; sourceTree = "<group>"; };
+		87F781F818E04179008EC719 /* IDPSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPSlider.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87F781C218E0412C008EC719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87F781C918E0412C008EC719 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87F781D218E0412C008EC719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87F781DD18E0412C008EC719 /* libIDPSlider.a in Frameworks */,
+				87F781D718E0412C008EC719 /* XCTest.framework in Frameworks */,
+				87F781DA18E0412C008EC719 /* UIKit.framework in Frameworks */,
+				87F781D818E0412C008EC719 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87F781BC18E0412C008EC719 = {
+			isa = PBXGroup;
+			children = (
+				87F781F018E04179008EC719 /* Lib */,
+				87F781CA18E0412C008EC719 /* IDPSlider */,
+				87F781DE18E0412C008EC719 /* IDPSliderTests */,
+				87F781C718E0412C008EC719 /* Frameworks */,
+				87F781C618E0412C008EC719 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		87F781C618E0412C008EC719 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87F781C518E0412C008EC719 /* libIDPSlider.a */,
+				87F781D518E0412C008EC719 /* IDPSliderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87F781C718E0412C008EC719 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87F781C818E0412C008EC719 /* Foundation.framework */,
+				87F781D618E0412C008EC719 /* XCTest.framework */,
+				87F781D918E0412C008EC719 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87F781CA18E0412C008EC719 /* IDPSlider */ = {
+			isa = PBXGroup;
+			children = (
+				87F781CB18E0412C008EC719 /* Supporting Files */,
+			);
+			path = IDPSlider;
+			sourceTree = "<group>";
+		};
+		87F781CB18E0412C008EC719 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				87F781CC18E0412C008EC719 /* IDPSlider-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87F781DE18E0412C008EC719 /* IDPSliderTests */ = {
+			isa = PBXGroup;
+			children = (
+				87F781E418E0412C008EC719 /* IDPSliderTests.m */,
+				87F781DF18E0412C008EC719 /* Supporting Files */,
+			);
+			path = IDPSliderTests;
+			sourceTree = "<group>";
+		};
+		87F781DF18E0412C008EC719 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				87F781E018E0412C008EC719 /* IDPSliderTests-Info.plist */,
+				87F781E118E0412C008EC719 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87F781F018E04179008EC719 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				87F781F118E04179008EC719 /* IDPDraggingPointView.h */,
+				87F781F218E04179008EC719 /* IDPDraggingPointView.m */,
+				87F781F318E04179008EC719 /* IDPSliderBaseView.h */,
+				87F781F418E04179008EC719 /* IDPSliderBaseView.m */,
+				87F781F518E04179008EC719 /* IDPSliderRimView.h */,
+				87F781F618E04179008EC719 /* IDPSliderRimView.m */,
+				87F781F718E04179008EC719 /* IDPSlider.h */,
+				87F781F818E04179008EC719 /* IDPSlider.m */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87F781C418E0412C008EC719 /* IDPSlider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87F781E818E0412C008EC719 /* Build configuration list for PBXNativeTarget "IDPSlider" */;
+			buildPhases = (
+				87F781C118E0412C008EC719 /* Sources */,
+				87F781C218E0412C008EC719 /* Frameworks */,
+				87F781C318E0412C008EC719 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IDPSlider;
+			productName = IDPSlider;
+			productReference = 87F781C518E0412C008EC719 /* libIDPSlider.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		87F781D418E0412C008EC719 /* IDPSliderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87F781EB18E0412C008EC719 /* Build configuration list for PBXNativeTarget "IDPSliderTests" */;
+			buildPhases = (
+				87F781D118E0412C008EC719 /* Sources */,
+				87F781D218E0412C008EC719 /* Frameworks */,
+				87F781D318E0412C008EC719 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87F781DC18E0412C008EC719 /* PBXTargetDependency */,
+			);
+			name = IDPSliderTests;
+			productName = IDPSliderTests;
+			productReference = 87F781D518E0412C008EC719 /* IDPSliderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87F781BD18E0412C008EC719 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Irimasu Densan Planning";
+			};
+			buildConfigurationList = 87F781C018E0412C008EC719 /* Build configuration list for PBXProject "IDPSlider" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 87F781BC18E0412C008EC719;
+			productRefGroup = 87F781C618E0412C008EC719 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87F781C418E0412C008EC719 /* IDPSlider */,
+				87F781D418E0412C008EC719 /* IDPSliderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87F781D318E0412C008EC719 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87F781E318E0412C008EC719 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87F781C118E0412C008EC719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87F781D118E0412C008EC719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87F781FB18E04179008EC719 /* IDPSliderRimView.m in Sources */,
+				87F781FA18E04179008EC719 /* IDPSliderBaseView.m in Sources */,
+				87F781FC18E04179008EC719 /* IDPSlider.m in Sources */,
+				87F781F918E04179008EC719 /* IDPDraggingPointView.m in Sources */,
+				87F781E518E0412C008EC719 /* IDPSliderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		87F781DC18E0412C008EC719 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87F781C418E0412C008EC719 /* IDPSlider */;
+			targetProxy = 87F781DB18E0412C008EC719 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		87F781E118E0412C008EC719 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87F781E218E0412C008EC719 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87F781E618E0412C008EC719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		87F781E718E0412C008EC719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87F781E918E0412C008EC719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/IDPSlider.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDPSlider/IDPSlider-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		87F781EA18E0412C008EC719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/IDPSlider.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDPSlider/IDPSlider-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		87F781EC18E0412C008EC719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDPSlider/IDPSlider-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "IDPSliderTests/IDPSliderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		87F781ED18E0412C008EC719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDPSlider/IDPSlider-Prefix.pch";
+				INFOPLIST_FILE = "IDPSliderTests/IDPSliderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87F781C018E0412C008EC719 /* Build configuration list for PBXProject "IDPSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87F781E618E0412C008EC719 /* Debug */,
+				87F781E718E0412C008EC719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87F781E818E0412C008EC719 /* Build configuration list for PBXNativeTarget "IDPSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87F781E918E0412C008EC719 /* Debug */,
+				87F781EA18E0412C008EC719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		87F781EB18E0412C008EC719 /* Build configuration list for PBXNativeTarget "IDPSliderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87F781EC18E0412C008EC719 /* Debug */,
+				87F781ED18E0412C008EC719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 87F781BD18E0412C008EC719 /* Project object */;
+}
