@@ -163,12 +163,14 @@
                             pt.x = [self sliderEndPosition];
                         }
                         
-                        NSLog(@"UIGestureRecognizerStateChanged: call pt=%@",[NSValue valueWithCGPoint:pt]);
+                        //                        NSLog(@"UIGestureRecognizerStateChanged: call pt=%@",[NSValue valueWithCGPoint:pt]);
                         
                         _draggingPointView.center = pt;
                         
                         _boardView.frame = CGRectMake(_draggingPointView.center.x,  _boardView.frame.origin.y , _sliderRimView.frame.origin.x - _draggingPointView.center.x, _boardView.frame.size.height);
                         
+                        _value = [self updateValue];
+                        [_delegate sliderChangeValue:self];
                     }
                         break;
                     default:
