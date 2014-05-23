@@ -35,13 +35,13 @@
 - (void) awakeFromNib
 {
     [super awakeFromNib];
-//    _value = .5f;
+    //    _value = .5f;
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-
+    
     if( _sliderBaseView == nil ){
         _sliderBaseView = [[IDPSliderBaseView alloc] initWithFrame:(CGRect){CGPointMake(.0f, .0f),self.frame.size}];
         _sliderBaseView.opaque = NO;
@@ -49,6 +49,9 @@
         [self addSubview:_sliderBaseView];
         
         UIPanGestureRecognizer* panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(firedPan:)];
+        NSLog(@"panGestureRecognizer.delaysTouchesBegan=%@",panGestureRecognizer.delaysTouchesBegan ? @"YES" : @"NO" );
+        
+        
         [_sliderBaseView addGestureRecognizer:panGestureRecognizer];
     }
     
@@ -133,15 +136,19 @@
 
 - (IBAction)firedPan:(UIPanGestureRecognizer *)gesture
 {
+    //    NSLog(@"IDPSlider firedPan: call");
+    
+    
     switch (gesture.state) {
         case UIGestureRecognizerStateBegan:
         {
             CGPoint hitTest = [gesture locationInView:_sliderBaseView.superview];
-            if( CGRectContainsPoint(_draggingPointView.frame, hitTest) ){
-                
-                _dragOffsetX = @(_draggingPointView.center.x - hitTest.x);
-            }
+            CGRect hitTestRect = CGRectUnion(CGRectOffset(_draggingPointView.frame, -5.0f, -5.0f),CGRectOffset(_draggingPointView.frame, 5.0f, 5.0f) );
             
+            if( CGRectContainsPoint(hitTestRect, hitTest) ){
+                _dragOffsetX = @(_draggingPointView.center.x - hitTest.x);
+                
+            }
         }
             break;
         case UIGestureRecognizerStateChanged:
@@ -214,8 +221,8 @@
                             }
                         }
                         
-                        NSLog(@"move1=%@",@(move1));
-                        NSLog(@"move2=%@",@(move2));
+                        //                        NSLog(@"move1=%@",@(move1));
+                        //                        NSLog(@"move2=%@",@(move2));
                         
                         if( move2 == .0f){
                             [UIView animateWithDuration:.25f delay:.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
@@ -230,7 +237,7 @@
                             CGFloat total = fabs(move1) + fabs(move2);
                             CGFloat ratioMove1 = fabs(move1) / total;
                             CGFloat ratioMove2 = fabs(move2) / total;
-                                // 距離に基づいて秒数比率を計算
+                            // 距離に基づいて秒数比率を計算
                             
                             [UIView animateWithDuration:.25f * ratioMove1 delay:.0f options:UIViewAnimationOptionCurveLinear animations:^{
                                 _draggingPointView.center = CGPointMake(_draggingPointView.center.x + move1, _draggingPointView.center.y);
