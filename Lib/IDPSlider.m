@@ -11,17 +11,23 @@
 #import "IDPDraggingPointView.h"
 #import "IDPSliderRimView.h"
 
-@interface IDPSlider ()
+@interface IDPSlider () <UIGestureRecognizerDelegate>
 {
     IDPSliderBaseView *_sliderBaseView;
     IDPDraggingPointView *_draggingPointView;
     IDPSliderRimView *_sliderRimView;
     UIView *_boardView;
     NSNumber *_dragOffsetX;
+    UIPanGestureRecognizer *_panGestureRecognizer;
 }
 @end
 
 @implementation IDPSlider
+
+- (UIPanGestureRecognizer *)panGestureRecognizer
+{
+    return _panGestureRecognizer;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -48,11 +54,11 @@
         _sliderBaseView.backgroundColor = [UIColor clearColor];
         [self addSubview:_sliderBaseView];
         
-        UIPanGestureRecognizer* panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(firedPan:)];
-        NSLog(@"panGestureRecognizer.delaysTouchesBegan=%@",panGestureRecognizer.delaysTouchesBegan ? @"YES" : @"NO" );
+        _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(firedPan:)];
+        _panGestureRecognizer.delegate = self;
+        NSLog(@"panGestureRecognizer.delaysTouchesBegan=%@",_panGestureRecognizer.delaysTouchesBegan ? @"YES" : @"NO" );
         
-        
-        [_sliderBaseView addGestureRecognizer:panGestureRecognizer];
+        [_sliderBaseView addGestureRecognizer:_panGestureRecognizer];
     }
     
     if( _sliderRimView == nil ){
@@ -134,21 +140,26 @@
     }
 }
 
+
+- (BOOL) gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    BOOL shouldBegin = YES;
+    if( _panGestureRecognizer == gestureRecognizer ){
+        CGPoint hitTest = [gestureRecognizer locationInView:_sliderBaseView.superview];
+        CGRect hitTestRect = CGRectUnion(CGRectOffset(_draggingPointView.frame, -5.0f, -5.0f),CGRectOffset(_draggingPointView.frame, 5.0f, 5.0f) );
+        
+        shouldBegin = CGRectContainsPoint(hitTestRect, hitTest) ? YES : NO;
+    }
+    return shouldBegin;
+}
+
 - (IBAction)firedPan:(UIPanGestureRecognizer *)gesture
 {
-    //    NSLog(@"IDPSlider firedPan: call");
-    
-    
     switch (gesture.state) {
         case UIGestureRecognizerStateBegan:
         {
-            CGPoint hitTest = [gesture locationInView:_sliderBaseView.superview];
-            CGRect hitTestRect = CGRectUnion(CGRectOffset(_draggingPointView.frame, -5.0f, -5.0f),CGRectOffset(_draggingPointView.frame, 5.0f, 5.0f) );
-            
-            if( CGRectContainsPoint(hitTestRect, hitTest) ){
-                _dragOffsetX = @(_draggingPointView.center.x - hitTest.x);
-                
-            }
+            CGPoint location = [gesture locationInView:_sliderBaseView.superview];
+            _dragOffsetX = @(_draggingPointView.center.x - location.x);
         }
             break;
         case UIGestureRecognizerStateChanged:

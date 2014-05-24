@@ -14,6 +14,7 @@
 
 @property(assign,nonatomic) CGFloat value;
 @property(weak,nonatomic) IBOutlet id<IDPSliderDelegate> delegate;
+@property(readonly,nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
 @end
 
 @protocol IDPSliderDelegate <NSObject>
