@@ -67,7 +67,7 @@
     
     //// Color Declarations
     UIColor* color3 = [UIColor colorWithRed: 0.985 green: 0.985 blue: 0.985 alpha: 1];
-    UIColor* color4 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.4];
+    UIColor* color4 = [UIColor colorWithRed: 0 green: 0 blue: 0 alpha: 0.3];
     
     //// Shadow Declarations
     UIColor* shadow = [UIColor.blackColor colorWithAlphaComponent: 0.5];
