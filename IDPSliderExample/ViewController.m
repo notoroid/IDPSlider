@@ -12,6 +12,7 @@
 @interface ViewController () <IDPSliderDelegate>
 {
     __weak IBOutlet IDPSlider *_slider;
+    __weak IBOutlet IDPSlider *_sliderSlim;
     __weak IBOutlet UILabel *_labelValue;
 }
 @end
@@ -25,6 +26,9 @@
     _slider.value = .25f;
     
     _labelValue.text = [NSString stringWithFormat:@"%@",@(_slider.value)];
+    
+    _sliderSlim.value = .25;
+    _sliderSlim.sliderStyle = IDPSliderStyleSlim;
     
 }
 

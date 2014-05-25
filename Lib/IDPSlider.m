@@ -14,15 +14,44 @@
 @interface IDPSlider () <UIGestureRecognizerDelegate>
 {
     IDPSliderBaseView *_sliderBaseView;
-    IDPDraggingPointView *_draggingPointView;
+    UIView *_draggingPointView;
     IDPSliderRimView *_sliderRimView;
     UIView *_boardView;
     NSNumber *_dragOffsetX;
     UIPanGestureRecognizer *_panGestureRecognizer;
+    
+    IDPSliderStyle _sliderStyle;
 }
 @end
 
 @implementation IDPSlider
+
+- (IDPSliderStyle) sliderStyle
+{
+    return _sliderStyle;
+}
+
+- (void) setSliderStyle:(IDPSliderStyle)sliderStyle
+{
+    if( _sliderStyle != sliderStyle ){
+        _sliderStyle = sliderStyle;
+
+        if( _draggingPointView != nil ){
+            CGPoint center = _draggingPointView.center;
+            [_draggingPointView removeFromSuperview];
+            
+            _draggingPointView = sliderStyle == IDPSliderStyleDefault ? [[IDPDraggingPointView alloc] initWithFrame:(CGRect){CGPointMake(.0f, .0f),CGSizeMake(self.frame.size.height,self.frame.size.height)}] : [[IDPSlimDraggingPointView alloc] initWithFrame:(CGRect){CGPointMake(.0f, .0f),CGSizeMake(self.frame.size.height,self.frame.size.height)}];
+            
+            _draggingPointView.opaque = NO;
+            _draggingPointView.backgroundColor = [UIColor clearColor];
+            _draggingPointView.userInteractionEnabled = NO;
+            
+            [self addSubview:_draggingPointView];
+            _draggingPointView.center = center;
+        }
+        
+    }
+}
 
 - (UIPanGestureRecognizer *)panGestureRecognizer
 {
@@ -80,9 +109,8 @@
         _boardView.center = CGPointMake(_boardView.center.x, _sliderBaseView.center.y);
     }
     
-    
     if( _draggingPointView == nil ){
-        _draggingPointView = [[IDPDraggingPointView alloc] initWithFrame:(CGRect){CGPointMake(.0f, .0f),CGSizeMake(self.frame.size.height,self.frame.size.height)}];
+        _draggingPointView = _sliderStyle == IDPSliderStyleDefault ? [[IDPDraggingPointView alloc] initWithFrame:(CGRect){CGPointMake(.0f, .0f),CGSizeMake(self.frame.size.height,self.frame.size.height)}] : [[IDPSlimDraggingPointView alloc] initWithFrame:(CGRect){CGPointMake(.0f, .0f),CGSizeMake(self.frame.size.height,self.frame.size.height)}];
         _draggingPointView.opaque = NO;
         _draggingPointView.backgroundColor = [UIColor clearColor];
         _draggingPointView.userInteractionEnabled = NO;
@@ -92,6 +120,7 @@
         
         [self setValue:_value animated:NO];
     }
+    
 }
 
 - (CGFloat) sliderBeginPosition
@@ -101,6 +130,7 @@
 
 - (CGFloat) sliderEndPosition
 {
+    
     return CGRectGetMaxX(_sliderBaseView.frame) - SLIDER_RIM_OFFSET;
 }
 

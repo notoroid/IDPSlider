@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, IDPSliderStyle )
+{
+     IDPSliderStyleDefault
+    ,IDPSliderStyleSlim
+};
+
 @protocol IDPSliderDelegate;
 
 @interface IDPSlider : UIView
-
+@property(assign,nonatomic) IDPSliderStyle sliderStyle;
 @property(assign,nonatomic) CGFloat value;
 @property(weak,nonatomic) IBOutlet id<IDPSliderDelegate> delegate;
 @property(readonly,nonatomic) UIPanGestureRecognizer *panGestureRecognizer;

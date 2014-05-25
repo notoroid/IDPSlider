@@ -11,3 +11,7 @@
 @interface IDPDraggingPointView : UIView
 
 @end
+
+@interface IDPSlimDraggingPointView : UIView
+
+@end
