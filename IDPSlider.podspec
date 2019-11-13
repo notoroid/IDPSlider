@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "IDPSlider"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "IDPSlider is Slider UI for iOS7 and later."
 
   s.description  = <<-DESC
@@ -16,9 +16,8 @@ Pod::Spec.new do |s|
   s.author             = { "notoroid" => "noto@irimasu.com" }
   s.social_media_url   = "http://twitter.com/notoroid"
 
-  s.platform     = :ios, "7.0"
-
-  s.source       = { :git => "https://github.com/notoroid/IDPSlider.git", :tag => "v0.0.1" }
+  s.ios.deployment_target = "7.0"
+  s.source       = { :git => "https://github.com/notoroid/IDPSlider.git", :tag => "v0.0.2" }
 
   s.source_files  = "Lib/**/*.{h,m}"
   s.public_header_files = "Lib/**/*.h"
