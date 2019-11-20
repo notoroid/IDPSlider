@@ -145,8 +145,8 @@
 {
     dispatch_block_t block = ^{
         CGFloat length = [self sliderEndPosition] - [self sliderBeginPosition];
-        _draggingPointView.center = CGPointMake([self sliderBeginPosition] + length * _value, _sliderBaseView.center.y );
-        _boardView.frame = CGRectMake(_draggingPointView.center.x,  _boardView.frame.origin.y , _sliderRimView.frame.origin.x - _draggingPointView.center.x, _boardView.frame.size.height);
+        self->_draggingPointView.center = CGPointMake([self sliderBeginPosition] + length * self->_value, self->_sliderBaseView.center.y );
+        self->_boardView.frame = CGRectMake(self->_draggingPointView.center.x,  self->_boardView.frame.origin.y , self->_sliderRimView.frame.origin.x - self->_draggingPointView.center.x, self->_boardView.frame.size.height);
     };
     
     if( _draggingPointView != nil ){
@@ -267,12 +267,12 @@
                         
                         if( move2 == .0f){
                             [UIView animateWithDuration:.25f delay:.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
-                                _draggingPointView.center = CGPointMake(_draggingPointView.center.x + move1, _draggingPointView.center.y);
-                                _boardView.frame = CGRectMake(_draggingPointView.center.x,  _boardView.frame.origin.y , _sliderRimView.frame.origin.x - _draggingPointView.center.x, _boardView.frame.size.height);
+                                self->_draggingPointView.center = CGPointMake(self->_draggingPointView.center.x + move1, self->_draggingPointView.center.y);
+                                self->_boardView.frame = CGRectMake(self->_draggingPointView.center.x,  self->_boardView.frame.origin.y , self->_sliderRimView.frame.origin.x - self->_draggingPointView.center.x, self->_boardView.frame.size.height);
                                 
                             } completion:^(BOOL finished) {
-                                _value = [self updateValue];
-                                [_delegate sliderChangeValue:self];
+                                self->_value = [self updateValue];
+                                [self->_delegate sliderChangeValue:self];
                             }];
                         }else{
                             CGFloat total = fabs(move1) + fabs(move2);
@@ -281,17 +281,17 @@
                             // 距離に基づいて秒数比率を計算
                             
                             [UIView animateWithDuration:.25f * ratioMove1 delay:.0f options:UIViewAnimationOptionCurveLinear animations:^{
-                                _draggingPointView.center = CGPointMake(_draggingPointView.center.x + move1, _draggingPointView.center.y);
-                                _boardView.frame = CGRectMake(_draggingPointView.center.x,  _boardView.frame.origin.y , _sliderRimView.frame.origin.x - _draggingPointView.center.x, _boardView.frame.size.height);
+                                self->_draggingPointView.center = CGPointMake(self->_draggingPointView.center.x + move1, self->_draggingPointView.center.y);
+                                self->_boardView.frame = CGRectMake(self->_draggingPointView.center.x,  self->_boardView.frame.origin.y , self->_sliderRimView.frame.origin.x - self->_draggingPointView.center.x, self->_boardView.frame.size.height);
                                 
                             } completion:^(BOOL finished) {
                                 [UIView animateWithDuration:.25f * ratioMove2 delay:.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
-                                    _draggingPointView.center = CGPointMake(_draggingPointView.center.x + move2, _draggingPointView.center.y);
-                                    _boardView.frame = CGRectMake(_draggingPointView.center.x,  _boardView.frame.origin.y , _sliderRimView.frame.origin.x - _draggingPointView.center.x, _boardView.frame.size.height);
+                                    self->_draggingPointView.center = CGPointMake(self->_draggingPointView.center.x + move2, self->_draggingPointView.center.y);
+                                    self->_boardView.frame = CGRectMake(self->_draggingPointView.center.x,  self->_boardView.frame.origin.y , self->_sliderRimView.frame.origin.x - self->_draggingPointView.center.x, self->_boardView.frame.size.height);
                                     
                                 } completion:^(BOOL finished) {
-                                    _value = [self updateValue];
-                                    [_delegate sliderChangeValue:self];
+                                    self->_value = [self updateValue];
+                                    [self->_delegate sliderChangeValue:self];
                                 }];
                             }];
                         }
